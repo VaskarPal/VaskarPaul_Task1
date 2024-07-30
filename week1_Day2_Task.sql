@@ -67,3 +67,55 @@ INSERT INTO employees (employeeid, firstname, lastname, email, salary, departmen
 VALUES (14, 'Duplicate', 'Email', 'john.doe@company.com', 60000, 1);
 
 UPDATE employees SET departmentid = 13 WHERE employeeid = 1;
+
+
+SELECT first_name, last_name, salary
+FROM your_table
+ORDER BY salary DESC
+LIMIT 3;
+-- Top 3 employees with the lowest salaries:
+
+
+SELECT first_name, last_name, salary
+FROM your_table
+ORDER BY salary ASC
+LIMIT 3;
+-- Employee with the 2nd highest salary:
+
+
+SELECT first_name, last_name, salary
+FROM your_table
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+
+-- Employee with the 2nd lowest salary:
+
+
+SELECT first_name, last_name, salary
+FROM your_table
+ORDER BY salary ASC
+LIMIT 1 OFFSET 1;
+
+-- Employee with the 3rd highest salary:
+
+
+SELECT first_name, last_name, salary
+FROM your_table
+ORDER BY salary DESC
+LIMIT 1 OFFSET 2;
+
+-- Employee with the 3rd lowest salary:
+
+
+SELECT first_name, last_name, salary
+FROM your_table
+ORDER BY salary ASC
+LIMIT 1 OFFSET 2;
+
+-- Employees with salary between 65000 and 80000, ordered by first name in descending order, limited to 3 rows:
+
+SELECT first_name, last_name, email, salary
+FROM your_table
+WHERE salary BETWEEN 65000 AND 80000
+ORDER BY first_name DESC
+LIMIT 3;
